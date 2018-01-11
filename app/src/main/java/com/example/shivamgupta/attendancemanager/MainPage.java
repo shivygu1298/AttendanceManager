@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class MainPage extends AppCompatActivity {
       ListView lvList;
-      ArrayList<subjects> subjectList = new ArrayList<>();
+      static ArrayList<subjects> subjectList = new ArrayList<>();
       attendanceAdapter attendanceAdapter = new attendanceAdapter();
 
     @Override
@@ -28,20 +28,8 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        ArrayList<String> here = getIntent().getExtras().getStringArray("throwing");
-
         Button btnAdd = findViewById(R.id.btnAdd);
         lvList = findViewById(R.id.lvItems);
-
-        GraphView graph = (GraphView) findViewById(R.id.graph);
-        BarGraphSeries<DataPoint> series = new BarGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
-        graph.addSeries(series);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,25 +40,30 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
-//        String subjectName = getIntent().getStringExtra("subjectname");
+        subjects currentSubject;
+        lvList.setAdapter(attendanceAdapter);
+        attendanceAdapter.notifyDataSetChanged();
+
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
+        graph.addSeries(series);
+//        String subjectName = get3Intent().getStringExtra("subjectname");
 //        String bunkedClasses = getIntent().getStringExtra("bunkedclasses");
 //        String totalClasses = getIntent().getStringExtra("totalclasses");
-
-        if(subjectList !=null)
-        {
-            String SubjectName = here.get(0);
-            //fetch Others as well
-            int BunkedClasses = Integer.parseInt(bunkedClasses);
-            int TotalClasses = Integer.parseInt(totalClasses);
-            Float percentage = Float.valueOf((TotalClasses - BunkedClasses)/TotalClasses);
-
-
-            subjectList.add(new subjects(subjectName ,percentage));
-            lvList.setAdapter(attendanceAdapter);
-            attendanceAdapter.notifyDataSetChanged();
-            subjectList = null;
-        }
-    }
+//
+//        int BunkedClasses = Integer.parseInt(bunkedClasses);
+//        int TotalClasses = Integer.parseInt(totalClasses);
+//        Float percentage = Float.valueOf((TotalClasses - BunkedClasses)/TotalClasses);
+//
+//        subjectList.add(new subjects(subjectName ,percentage));
+//        lvList.setAdapter(attendanceAdapter);
+//        attendanceAdapter.notifyDataSetChanged();
     }
 
     class attendanceAdapter extends BaseAdapter{

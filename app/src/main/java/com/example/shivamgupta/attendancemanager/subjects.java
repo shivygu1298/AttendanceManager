@@ -1,10 +1,12 @@
 package com.example.shivamgupta.attendancemanager;
 
+import java.io.Serializable;
+
 /**
  * Created by Shivam Gupta on 09-01-2018.
  */
 
-public class subjects {
+public class subjects implements Serializable {
     String subjectName;
     Float percentage;
 
