@@ -105,6 +105,16 @@ public class MainPage extends AppCompatActivity {
             tvSubName.setText(thisSubject.getSubjectName());
             tvPercentage.setText(thisSubject.getPercentage().toString());
 
+            Button btnDelte = findViewById(R, R.id.btnDelete);
+            btnDelte.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    subjectList.remove(thisSubject);
+                    lvList.setAdapter(attendanceAdapter);
+                    attendanceAdapter.notifyDataSetChanged();
+                }
+            });
+
             return view;
 
         }
