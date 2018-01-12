@@ -10,9 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,13 +21,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="100dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Classes"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
-        android:layout_marginLeft="40dp"
         android:id="@+id/btnIncrease"
         android:background="@drawable/circle_button"/>
 
@@ -39,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/tvDisplay"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="45dp"
         android:textSize="20sp"/>
 
         <Button
@@ -53,35 +61,60 @@
 
     </LinearLayout>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="50dp">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
-        <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="+"-->
-            <!--android:layout_marginLeft="40dp"-->
-            <!--android:id="@+id/btnIncrease2"-->
-            <!--android:background="@drawable/circle_button"/>-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bunked Classes"/>
+    </LinearLayout>
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="0"-->
-            <!--android:id="@+id/tvDisplay2"-->
-            <!--android:layout_marginLeft="50dp"-->
-            <!--android:textSize="20sp"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
-        <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="-"-->
-            <!--android:id="@+id/btnDecrease2"-->
-            <!--android:background="@drawable/circle_button"-->
-            <!--android:layout_marginLeft="50dp"-->
-            <!--/>-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/btnIncrease2"
+            android:background="@drawable/circle_button"/>
 
-    <!--</LinearLayout>-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvDisplay2"
+            android:layout_marginLeft="45dp"
+            android:textSize="20sp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/btnDecrease2"
+            android:background="@drawable/circle_button"
+            android:layout_marginLeft="50dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnReturn"
+            android:text="Return"/>
+    </LinearLayout>
 </LinearLayout>

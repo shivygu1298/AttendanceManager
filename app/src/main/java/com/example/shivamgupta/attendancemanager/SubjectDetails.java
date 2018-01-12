@@ -43,7 +43,7 @@ public class SubjectDetails extends AppCompatActivity {
                 float percentage = ((TotalClasses-BunkedClasses)/TotalClasses)*100;
 
 
-                subjects currentSubject = new subjects(SubjectName ,percentage);
+                subjects currentSubject = new subjects(SubjectName ,percentage , TotalClasses , BunkedClasses);
                 MainPage.subjectList.add(currentSubject);
 
                 MainPage.tvtotalBunks += (int) BunkedClasses;

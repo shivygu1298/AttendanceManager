@@ -64,15 +64,7 @@ public class MainPage extends AppCompatActivity {
         });
         graph.addSeries(series);
 
-        lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainPage.this, "List Item On Click Succesful", Toast.LENGTH_SHORT).show();
-                Intent j = new Intent(MainPage.this, OnListItemCLick.class);
-//                j.putExtra("position" , i);
-                startActivity(j);
-            }
-        });
+
     }
 
     class attendanceAdapter extends BaseAdapter{
@@ -93,7 +85,7 @@ public class MainPage extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
+        public View getView(final int i, View view, ViewGroup viewGroup) {
             LayoutInflater li = getLayoutInflater();
             view = li.inflate(R.layout.list_item , viewGroup , false);
 
@@ -105,13 +97,25 @@ public class MainPage extends AppCompatActivity {
             tvSubName.setText(thisSubject.getSubjectName());
             tvPercentage.setText(thisSubject.getPercentage().toString());
 
-            Button btnDelte = findViewById(R, R.id.btnDelete);
+            Button btnDelte = view.findViewById(R.id.btnDelete);
             btnDelte.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     subjectList.remove(thisSubject);
                     lvList.setAdapter(attendanceAdapter);
                     attendanceAdapter.notifyDataSetChanged();
+                }
+            });
+
+            Button btnUpdate = view.findViewById(R.id.btnUpdate);
+
+            btnUpdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(MainPage.this, "List Item On Click Succesful", Toast.LENGTH_SHORT).show();
+                    Intent j = new Intent(MainPage.this, OnListItemCLick.class);
+                j.putExtra("position" , i);
+                    startActivity(j);
                 }
             });
 
