@@ -3,30 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.example.shivamgupta.attendancemanager.SubjectDetails">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Subject Name Here"
+        android:textSize="28sp"
         android:id="@+id/etSubName"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:hint="Enter Number of Classes Bunked"
         android:inputType="number"
         android:id="@+id/etBunkedClasses"/>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="27sp"
         android:hint="Enter Total Number of Classes"
         android:inputType="number"
         android:id="@+id/etTotalClasses"/>
 
     <Button
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Done"

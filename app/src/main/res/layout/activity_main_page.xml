@@ -8,7 +8,8 @@
     tools:context="com.example.shivamgupta.attendancemanager.MainPage">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
@@ -24,7 +25,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
@@ -32,18 +33,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:id="@+id/tvpercentageBunks"
             android:layout_marginLeft="120dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
+            android:id="@+id/tvTotalBunks"
             android:text="0"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp">
 
         <com.jjoe64.graphview.GraphView
             android:layout_width="wrap_content"
@@ -55,30 +59,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/etSubName"
-            android:hint="Enter Subject Name"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Enter Number of Classes"
-            android:inputType="number"
-            android:id="@+id/etTotalNumberofClasses"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:hint="Enter number of classes bunked"
-            android:id="@+id/etClassesBunked"
-            android:layout_height="wrap_content" />
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+"
+            android:layout_gravity="center"
             android:id="@+id/btnAdd"
             />
 
@@ -86,10 +74,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
 
         <ListView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/lvItems"
             tools:listitem="@layout/list_item"/>

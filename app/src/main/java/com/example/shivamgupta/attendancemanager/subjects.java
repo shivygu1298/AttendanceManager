@@ -10,6 +10,7 @@ public class subjects implements Serializable {
     String subjectName;
     Float percentage;
 
+
     public subjects(String subjectName, Float percentage) {
         this.subjectName = subjectName;
         this.percentage = percentage;
@@ -22,4 +23,5 @@ public class subjects implements Serializable {
     public Float getPercentage() {
         return percentage;
     }
+
 }

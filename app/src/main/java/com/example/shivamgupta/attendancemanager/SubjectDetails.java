@@ -13,6 +13,7 @@ import java.text.DecimalFormat;
 public class SubjectDetails extends AppCompatActivity {
     EditText etSubjectName;
     EditText etBunkedClasses;
+    static int totalClasses = 0;
     EditText etTotalClasses;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +36,24 @@ public class SubjectDetails extends AppCompatActivity {
                 float BunkedClasses = Float.valueOf(etBunkedClasses.getText().toString());
                 float TotalClasses = Float.valueOf(etTotalClasses.getText().toString());
 
+
+
                 Intent i = new Intent(SubjectDetails.this , MainPage.class );
-//                i.putExtra("subjectname" , SubjectName);
-//                i.putExtra("bunkedclasses" , BunkedClasses);
-//                i.putExtra("totalclasses" , TotalClasses);
+
                 float percentage = ((TotalClasses-BunkedClasses)/TotalClasses)*100;
-                Log.d("lola", "onClick: " + percentage);
+
 
                 subjects currentSubject = new subjects(SubjectName ,percentage);
                 MainPage.subjectList.add(currentSubject);
+
+                MainPage.tvtotalBunks += (int) BunkedClasses;
+                float x = MainPage.tvtotalBunks;
+                totalClasses += TotalClasses;
+
+                float y = (x/totalClasses)*100;
+
+                MainPage.tvPercentage = y;
+
                 startActivity(i);
             }
         });

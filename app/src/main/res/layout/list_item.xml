@@ -18,12 +18,18 @@
         android:text="Percentage"
         android:id="@+id/tvPercentage"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-        android:layout_marginLeft="100dp"/>
+        android:layout_marginLeft="80dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:text=">"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        android:id="@+id/btnDelete"/>
 
 </LinearLayout>
